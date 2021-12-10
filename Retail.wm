@@ -6,10 +6,10 @@ anchor Customers [0.98, 0.88]
 
 component attract customers [0.92, 0.31] label [-69, -11]
 component sell exposure [0.90, 0.59] label [-40, -16]
-component location [0.60, 0.57] label [5, -10]
+component location [0.61, 0.57] label [5, -10]
 component branding [0.24, 0.57] label [11, -3]
 
-component user experience [0.93, 0.84] label [5, -10]
+component user experience [0.90, 0.68] label [-75, -23]
 attract customers->branding
 
 component presentation [0.72, 0.73]
@@ -19,7 +19,7 @@ user experience->branding
 Business Owner->attract customers
 Business Owner->sell exposure
 
-component online store [0.59, 0.81]
+component online store [0.63, 0.84]
 user experience->online store
 presentation->branding
 
@@ -30,16 +30,16 @@ online store->logistics
 sell exposure->location
 sell exposure->online store
 
-component free returns [0.83, 0.80] label [3, -13]
+component free returns [0.52, 0.79] label [3, -13]
 user experience->free returns
 Customers->user experience
 free returns->logistics
 location->branding
 
-component creative process [0.30, 0.43] label [-47, -37]
+component creative process [0.31, 0.56] label [-47, -37]
 branding->creative process
 
-component insights [0.22, 0.37] label [20, -5]
+component insights [0.22, 0.37] label [20, -9]
 attract customers->location
 attract customers->online store
 
@@ -52,7 +52,7 @@ attract customers->insights
 branding->insights
 location->insights
 user experience->insights
-component customer research [0.15, 0.41] label [11, -21]
+component customer research [0.15, 0.41] label [11, 3]
 insights->customer research
 presentation->customer research
 logistics->data platform
@@ -79,3 +79,7 @@ presentation->delivery
 user experience->presentation
 delivery->payment
 online store->branding
+component shipping [0.52, 0.87]
+user experience->shipping
+shipping->logistics
+location->free returns
