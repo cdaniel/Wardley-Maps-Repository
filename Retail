@@ -1,0 +1,69 @@
+title Retail
+
+
+anchor Business Owner [0.97, 0.32]
+anchor Customers [0.98, 0.88]
+
+component attract customers [0.92, 0.31] label [-69, -11]
+component sell exposure [0.90, 0.59] label [-40, -16]
+component location [0.72, 0.59] label [5, -10]
+component branding [0.26, 0.29] label [-59, -6]
+
+component user experience [0.93, 0.84] label [5, -10]
+attract customers->branding
+
+component ads [0.54, 0.72]
+pipeline ads [0.64, 0.9]
+attract customers->ads
+user experience->branding
+Business Owner->attract customers
+Business Owner->sell exposure
+
+component online store [0.73, 0.83]
+user experience->online store
+ads->branding
+
+component logistics [0.08, 0.66] label [-56, 3]
+component partnerships [0.03, 0.66] label [-81, 2]
+logistics->partnerships
+online store->logistics
+sell exposure->location
+sell exposure->online store
+
+component free returns [0.83, 0.80] label [3, -13]
+user experience->free returns
+Customers->user experience
+free returns->logistics
+location->branding
+
+component creative process [0.30, 0.43] label [-47, -37]
+branding->creative process
+
+component insights [0.22, 0.37] label [20, -5]
+attract customers->location
+attract customers->online store
+
+component data platform [0.04, 0.83] label [3, -5]
+insights->data platform
+online store->data platform
+creative process->data platform
+branding->data platform
+attract customers->insights
+branding->insights
+location->insights
+user experience->insights
+component customer research [0.15, 0.41] label [11, -21]
+insights->customer research
+ads->customer research
+logistics->data platform
+branding->customer research
+component body scan [0.08, 0.21] label [-58, -13]
+user experience->body scan
+insights->body scan
+customer research->body scan
+
+component products [0.41, 0.64] label [13, -8]
+pipeline products [0.5, 0.9]
+Customers->products
+products->creative process
+ads->creative process
