@@ -6,22 +6,22 @@ anchor Customers [0.98, 0.88]
 
 component attract customers [0.92, 0.31] label [-69, -11]
 component sell exposure [0.90, 0.59] label [-40, -16]
-component location [0.72, 0.59] label [5, -10]
-component branding [0.26, 0.29] label [-59, -6]
+component location [0.60, 0.57] label [5, -10]
+component branding [0.24, 0.57] label [11, -3]
 
 component user experience [0.93, 0.84] label [5, -10]
 attract customers->branding
 
-component ads [0.54, 0.72]
-pipeline ads [0.64, 0.9]
-attract customers->ads
+component presentation [0.72, 0.73]
+pipeline presentation [0.64, 0.9]
+attract customers->presentation
 user experience->branding
 Business Owner->attract customers
 Business Owner->sell exposure
 
-component online store [0.73, 0.83]
+component online store [0.59, 0.81]
 user experience->online store
-ads->branding
+presentation->branding
 
 component logistics [0.08, 0.66] label [-56, 3]
 component partnerships [0.03, 0.66] label [-81, 2]
@@ -54,7 +54,7 @@ location->insights
 user experience->insights
 component customer research [0.15, 0.41] label [11, -21]
 insights->customer research
-ads->customer research
+presentation->customer research
 logistics->data platform
 branding->customer research
 component body scan [0.08, 0.21] label [-58, -13]
@@ -62,8 +62,20 @@ user experience->body scan
 insights->body scan
 customer research->body scan
 
-component products [0.41, 0.64] label [13, -8]
-pipeline products [0.5, 0.9]
-Customers->products
-products->creative process
-ads->creative process
+component delivery [0.41, 0.64] label [13, -8]
+pipeline delivery [0.5, 0.9]
+Customers->delivery
+delivery->creative process
+presentation->creative process
+
+
+component payment [0.29, 0.87]
+online store->payment
+location->payment
+
+component credit [0.11, 0.87]
+payment->credit
+presentation->delivery
+user experience->presentation
+delivery->payment
+online store->branding
