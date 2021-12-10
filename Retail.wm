@@ -13,7 +13,7 @@ component user experience [0.90, 0.68] label [-75, -23]
 attract customers->branding
 
 component presentation [0.72, 0.73]
-pipeline presentation [0.64, 0.9]
+pipeline presentation [0.25, 0.9]
 attract customers->presentation
 user experience->branding
 Business Owner->attract customers
@@ -43,12 +43,12 @@ component insights [0.22, 0.37] label [20, -9]
 attract customers->location
 attract customers->online store
 
-component data platform [0.04, 0.83] label [3, -5]
+component data platform [0.04, 0.69] label [3, -5]
 insights->data platform
 online store->data platform
 creative process->data platform
 branding->data platform
-attract customers->insights
+
 branding->insights
 location->insights
 user experience->insights
@@ -83,3 +83,18 @@ component shipping [0.52, 0.87]
 user experience->shipping
 shipping->logistics
 location->free returns
+
+component maximise profits [0.95, 0.35] label [16, -5]
+Business Owner->maximise profits
+component pricing [0.56, 0.47]
+maximise profits->pricing
+Customers->pricing
+pricing->branding
+pricing->insights
+component multichannel [0.70, 0.67] label [-35, 24]
+online store->insights
+presentation->insights
+attract customers->pricing
+pricing->data platform
+component social commerce [0.70, 0.41] label [-31, 11]
+component live commerce [0.70, 0.30] label [-19, 25]
