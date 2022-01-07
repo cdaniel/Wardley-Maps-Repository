@@ -1,0 +1,95 @@
+title Telcos
+// based on the discussion https://twitter.com/wardleymaps/status/1478745441319673864
+// missed the boat https://twitter.com/HenkoPhil/status/1478888992661999619
+anchor consumers [0.97, 0.82]
+anchor advertising [0.96, 0.58]
+anchor business [0.97, 0.47]
+
+component entertainment [0.68, 0.86]
+
+component video streaming [0.32, 0.82] label [4, -3]
+component audio streaming [0.32, 0.89] label [3, -6]
+component connectivity [0.08, 0.86] label [7, -4]
+component satellites [0.03, 0.36]
+
+component vpns [0.21, 0.89]
+component internal networks [0.16, 0.90]
+
+component remote work [0.56, 0.56] label [17, -5]
+
+component zero trust applications [0.13, 0.66] label [-71, -29]
+
+component 5G [0.03, 0.27]
+component 6G [0.03, 0.15]
+component 4G [0.04, 0.94]
+
+component direct brain interface [0.89, 0.12]
+component IoT [0.78, 0.42]
+component MetaVerse [0.90, 0.05]
+
+component NFTs [0.78, 0.09]
+
+component workstation virtualisation [0.16, 0.69] label [18, -27]
+component cables [0.03, 0.71] label [12, 7]
+
+component net neutrality [0.92, 0.65]
+
+consumers->entertainment
+entertainment->video streaming
+entertainment->audio streaming
+audio streaming->connectivity
+video streaming->connectivity
+consumers->remote work
+remote work->video streaming
+remote work->audio streaming
+remote work->vpns
+remote work->internal networks
+remote work->zero trust applications
+remote work->workstation virtualisation
+workstation virtualisation->connectivity
+connectivity->4G
+connectivity->cables
+connectivity->satellites
+connectivity->5G
+connectivity->6G
+component fiber [0.03, 0.67] label [-38, 2]
+connectivity->fiber
+zero trust applications->connectivity
+internal networks->connectivity
+vpns->connectivity
+component SmartCars [0.85, 0.40]
+component Digital Twins [0.76, 0.32]
+component Smart Factories [0.91, 0.34]
+component traffic analysis [0.57, 0.47] label [18, -20]
+component location services [0.29, 0.51] label [-69, -12]
+advertising->traffic analysis
+advertising->location services
+component gov security [0.98, 0.28]
+gov security->location services
+gov security->traffic analysis
+component emergency services [0.86, 0.60] label [9, -11]
+consumers->emergency services
+emergency services->location services
+location services->connectivity
+traffic analysis->connectivity
+component edge networks [0.24, 0.71] label [16, -10]
+
+pipeline entertainment [0.25,0.9]
+
+//https://hhhypergrowth.com/what-are-edge-networks/
+//https://www.businesswire.com/news/home/20200226005583/en/Global-Telecom-Billing-Outsourcing-Market-2020-2024-6-CAGR-Projection-Through-2024-Technavio
+
+component billing [0.52, 0.76]
+component comm platforms [0.46, 0.73] //https://seekingalpha.com/article/4471940-vonage-ericsson-vg-eric-paving-way-for-metaverse
+pipeline comm platforms [0.44, 0.75]
+business->comm platforms
+comm platforms->video streaming
+comm platforms->audio streaming
+business->billing
+business->remote work
+remote work->comm platforms
+component game streaming [0.33, 0.69] label [10, -7]
+entertainment->game streaming
+game streaming->connectivity
+game streaming->edge networks
+comm platforms->edge networks
